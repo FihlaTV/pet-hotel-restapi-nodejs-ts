@@ -1,0 +1,19 @@
+import {Service} from "typedi";
+import {getManager} from "typeorm";
+import {Employee} from "../entity/Employee";
+
+@Service()
+export class EmployeeRepository {
+
+    findAll() {
+        return getManager().find(Employee);
+    }
+
+    findOneById(id: number) {
+        return getManager().findOneById(Employee, id);
+    }
+
+    insert(employee: Employee) {
+        return getManager().save(employee);
+    }
+}
