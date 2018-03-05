@@ -18,6 +18,6 @@ export class EmployeeRepository {
     }
 
     delete(id: number) {
-        return getManager().removeById(Employee, id);
+        return getManager().deleteById(Employee, id);
     }
 }
