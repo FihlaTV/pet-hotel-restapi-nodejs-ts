@@ -19,6 +19,9 @@ let EmployeeRepository = class EmployeeRepository {
     insert(employee) {
         return typeorm_1.getManager().save(employee);
     }
+    delete(id) {
+        return typeorm_1.getManager().removeById(Employee_1.Employee, id);
+    }
 };
 EmployeeRepository = __decorate([
     typedi_1.Service()

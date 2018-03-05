@@ -16,4 +16,8 @@ export class EmployeeRepository {
     insert(employee: Employee) {
         return getManager().save(employee);
     }
+
+    delete(id: number) {
+        return getManager().removeById(Employee, id);
+    }
 }

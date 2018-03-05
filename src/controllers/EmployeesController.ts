@@ -1,4 +1,4 @@
-import {Body, Get, JsonController, Param, Post} from "routing-controllers";
+import {Body, Get, JsonController, Param, Post, Delete} from "routing-controllers";
 import {Employee} from "../entity/Employee";
 import {EmployeeRepository} from "../repository/EmployeeRepository";
 import {Service} from "typedi";
@@ -23,6 +23,11 @@ export class EmployeesController {
     @Post("/")
     save(@Body() employee: Employee) {
         return this.employeeRepository.insert(employee);
+    }
+
+    @Delete("/:id")
+    delete(@Param("id") id: number) {
+        return this.employeeRepository.delete(id);
     }
 
 }

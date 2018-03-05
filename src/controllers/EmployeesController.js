@@ -29,6 +29,9 @@ let EmployeesController = class EmployeesController {
     save(employee) {
         return this.employeeRepository.insert(employee);
     }
+    delete(id) {
+        return this.employeeRepository.delete(id);
+    }
 };
 __decorate([
     routing_controllers_1.Get("/"),
@@ -50,6 +53,13 @@ __decorate([
     __metadata("design:paramtypes", [Employee_1.Employee]),
     __metadata("design:returntype", void 0)
 ], EmployeesController.prototype, "save", null);
+__decorate([
+    routing_controllers_1.Delete("/:id"),
+    __param(0, routing_controllers_1.Param("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], EmployeesController.prototype, "delete", null);
 EmployeesController = __decorate([
     typedi_1.Service(),
     routing_controllers_1.JsonController("/employees"),
