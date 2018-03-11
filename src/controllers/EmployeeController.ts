@@ -1,11 +1,11 @@
-import {Body, Get, JsonController, Param, Post, Delete} from "routing-controllers";
+import {Body, Delete, Get, JsonController, Param, Post, Put} from "routing-controllers";
 import {Employee} from "../entity/Employee";
 import {EmployeeRepository} from "../repository/EmployeeRepository";
 import {Service} from "typedi";
 
 @Service()
 @JsonController("/employees")
-export class EmployeesController {
+export class EmployeeController {
 
     constructor(private employeeRepository: EmployeeRepository) {
     }
@@ -28,6 +28,11 @@ export class EmployeesController {
     @Delete("/:id")
     delete(@Param("id") id: number) {
         return this.employeeRepository.delete(id);
+    }
+
+    @Put("/:id")
+    update(@Param("id") id: number, @Body() employee: Employee) {
+        return this.employeeRepository.update(id, employee);
     }
 
 }

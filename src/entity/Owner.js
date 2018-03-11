@@ -10,47 +10,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-let Employee = class Employee {
+let Owner = class Owner {
 };
 __decorate([
-    typeorm_1.Column({ name: "idstaff" }),
+    typeorm_1.Column({ name: "idowner" }),
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], Employee.prototype, "id", void 0);
+], Owner.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column({ name: "employee_name" }),
+    typeorm_1.Column({ name: "owner_name" }),
     __metadata("design:type", String)
-], Employee.prototype, "name", void 0);
+], Owner.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column({ name: "employee_last_name" }),
+    typeorm_1.Column({ name: "owner_last_name" }),
     __metadata("design:type", String)
-], Employee.prototype, "lastName", void 0);
+], Owner.prototype, "lastName", void 0);
 __decorate([
-    typeorm_1.Column({ name: "employee_patronymic" }),
+    typeorm_1.Column({ name: "owner_patronymic" }),
     __metadata("design:type", String)
-], Employee.prototype, "patronymic", void 0);
-__decorate([
-    typeorm_1.Column({ name: "date_rec" }),
-    __metadata("design:type", String)
-], Employee.prototype, "dateRec", void 0);
+], Owner.prototype, "patronymic", void 0);
 __decorate([
     typeorm_1.Column({ name: "passport" }),
     __metadata("design:type", String)
-], Employee.prototype, "passport", void 0);
+], Owner.prototype, "passport", void 0);
 __decorate([
     typeorm_1.Column({ name: "phone_num" }),
     __metadata("design:type", String)
-], Employee.prototype, "phoneNum", void 0);
+], Owner.prototype, "phoneNumber", void 0);
 __decorate([
     typeorm_1.Column({ name: "email" }),
     __metadata("design:type", String)
-], Employee.prototype, "email", void 0);
+], Owner.prototype, "email", void 0);
 __decorate([
-    typeorm_1.Column({ name: "position" }),
-    __metadata("design:type", String)
-], Employee.prototype, "position", void 0);
-Employee = __decorate([
-    typeorm_1.Entity("staff")
-], Employee);
-exports.Employee = Employee;
-//# sourceMappingURL=Employee.js.map
+    typeorm_1.Column({ name: "discount" }),
+    __metadata("design:type", Number)
+], Owner.prototype, "discount", void 0);
+__decorate([
+    typeorm_1.Column({ name: "idaddress" }),
+    __metadata("design:type", Number)
+], Owner.prototype, "addressId", void 0);
+Owner = __decorate([
+    typeorm_1.Entity("owner")
+], Owner);
+exports.Owner = Owner;
+//# sourceMappingURL=Owner.js.map

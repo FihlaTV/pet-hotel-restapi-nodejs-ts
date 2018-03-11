@@ -8,13 +8,13 @@ export class Employee {
     id: number;
 
     @Column({name: "employee_name"})
-    employeeName: string;
+    name: string;
 
     @Column({name: "employee_last_name"})
-    employeeLastName: string;
+    lastName: string;
 
     @Column({name: "employee_patronymic"})
-    employeePatronymic: string;
+    patronymic: string;
 
     @Column({name: "date_rec"})
     dateRec: string;

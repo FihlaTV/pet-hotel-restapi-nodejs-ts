@@ -14,7 +14,6 @@ const routing_controllers_1 = require("routing-controllers");
 const typeorm_2 = require("typeorm");
 const typedi_1 = require("typedi");
 const routing_controllers_2 = require("routing-controllers");
-const EmployeesController_1 = require("./controllers/EmployeesController");
 typeorm_1.useContainer(typedi_1.Container);
 routing_controllers_1.useContainer(typedi_1.Container);
 typeorm_2.useContainer(typedi_1.Container);
@@ -26,7 +25,7 @@ typeorm_1.createConnection().then((connection) => __awaiter(this, void 0, void 0
             origin: true
             // options from cors documentation
         },
-        controllers: [EmployeesController_1.EmployeesController],
+        controllers: [__dirname + "/controllers/*.js"],
     }).listen(3000, "127.0.0.1");
     console.log("Server is up and running on port 3000. Now send requests to check if everything works.");
 })).catch(error => console.log("Error: ", error));

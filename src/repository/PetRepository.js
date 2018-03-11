@@ -8,26 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const typedi_1 = require("typedi");
 const typeorm_1 = require("typeorm");
-const Employee_1 = require("../entity/Employee");
-let EmployeeRepository = class EmployeeRepository {
+const Pet_1 = require("../entity/Pet");
+let PetRepository = class PetRepository {
     findAll() {
-        return typeorm_1.getManager().find(Employee_1.Employee);
+        return typeorm_1.getManager().find(Pet_1.Pet);
     }
     findOneById(id) {
-        return typeorm_1.getManager().findOneById(Employee_1.Employee, id);
+        return typeorm_1.getManager().findOneById(Pet_1.Pet, id);
     }
-    insert(employee) {
-        return typeorm_1.getManager().save(employee);
+    insert(pet) {
+        return typeorm_1.getManager().save(pet);
     }
     delete(id) {
-        return typeorm_1.getManager().deleteById(Employee_1.Employee, id);
+        return typeorm_1.getManager().deleteById(Pet_1.Pet, id);
     }
-    update(id, employee) {
-        return typeorm_1.getManager().updateById(Employee_1.Employee, id, employee);
+    update(id, pet) {
+        return typeorm_1.getManager().updateById(Pet_1.Pet, id, pet);
     }
 };
-EmployeeRepository = __decorate([
+PetRepository = __decorate([
     typedi_1.Service()
-], EmployeeRepository);
-exports.EmployeeRepository = EmployeeRepository;
-//# sourceMappingURL=EmployeeRepository.js.map
+], PetRepository);
+exports.PetRepository = PetRepository;
+//# sourceMappingURL=PetRepository.js.map

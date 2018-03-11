@@ -16,7 +16,7 @@ const routing_controllers_1 = require("routing-controllers");
 const Employee_1 = require("../entity/Employee");
 const EmployeeRepository_1 = require("../repository/EmployeeRepository");
 const typedi_1 = require("typedi");
-let EmployeesController = class EmployeesController {
+let EmployeeController = class EmployeeController {
     constructor(employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
@@ -32,38 +32,49 @@ let EmployeesController = class EmployeesController {
     delete(id) {
         return this.employeeRepository.delete(id);
     }
+
+    update(id, employee) {
+        return this.employeeRepository.update(id, employee);
+    }
 };
 __decorate([
     routing_controllers_1.Get("/"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], EmployeesController.prototype, "getUsers", null);
+], EmployeeController.prototype, "getUsers", null);
 __decorate([
     routing_controllers_1.Get("/:id"),
     __param(0, routing_controllers_1.Param("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
-], EmployeesController.prototype, "get", null);
+], EmployeeController.prototype, "get", null);
 __decorate([
     routing_controllers_1.Post("/"),
     __param(0, routing_controllers_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Employee_1.Employee]),
     __metadata("design:returntype", void 0)
-], EmployeesController.prototype, "save", null);
+], EmployeeController.prototype, "save", null);
 __decorate([
     routing_controllers_1.Delete("/:id"),
     __param(0, routing_controllers_1.Param("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
-], EmployeesController.prototype, "delete", null);
-EmployeesController = __decorate([
+], EmployeeController.prototype, "delete", null);
+__decorate([
+    routing_controllers_1.Put("/:id"),
+    __param(0, routing_controllers_1.Param("id")), __param(1, routing_controllers_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Employee_1.Employee]),
+    __metadata("design:returntype", void 0)
+], EmployeeController.prototype, "update", null);
+EmployeeController = __decorate([
     typedi_1.Service(),
     routing_controllers_1.JsonController("/employees"),
     __metadata("design:paramtypes", [EmployeeRepository_1.EmployeeRepository])
-], EmployeesController);
-exports.EmployeesController = EmployeesController;
-//# sourceMappingURL=EmployeesController.js.map
+], EmployeeController);
+exports.EmployeeController = EmployeeController;
+//# sourceMappingURL=EmployeeController.js.map

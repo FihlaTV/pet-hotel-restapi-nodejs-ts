@@ -20,4 +20,8 @@ export class EmployeeRepository {
     delete(id: number) {
         return getManager().deleteById(Employee, id);
     }
+
+    update(id: number, employee: Employee) {
+        return getManager().updateById(Employee, id, employee);
+    }
 }
